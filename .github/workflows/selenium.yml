@@ -1,0 +1,65 @@
+name: Run Multiple Selenium Scripts on Different Servers Every Hour
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Chạy mỗi giờ vào phút thứ 0
+  workflow_dispatch:  # Cho phép chạy thủ công từ UI của GitHub Actions
+
+jobs:
+  run_x1_to_x5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
+        continue-on-error: true
+
+  run_x6_to_x10:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
+        continue-on-error: true
