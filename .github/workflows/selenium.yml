@@ -1,4 +1,4 @@
-name: Run 5 Python Scripts on 5 Different Servers
+name: Run Python Scripts on 5 Different Servers
 
 on:
   schedule:
@@ -8,9 +8,6 @@ on:
 jobs:
   run_on_server_1:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        script: [x1.py, x2.py, x3.py, x4.py, x5.py]  # Chạy tất cả 5 file trên server này
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -22,15 +19,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run script
-        run: python ${{ matrix.script }}
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
         continue-on-error: true
 
   run_on_server_2:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        script: [x1.py, x2.py, x3.py, x4.py, x5.py]  # Chạy tất cả 5 file trên server này
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -42,15 +48,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run script
-        run: python ${{ matrix.script }}
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
         continue-on-error: true
 
   run_on_server_3:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        script: [x1.py, x2.py, x3.py, x4.py, x5.py]  # Chạy tất cả 5 file trên server này
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -62,15 +77,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run script
-        run: python ${{ matrix.script }}
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
         continue-on-error: true
 
   run_on_server_4:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        script: [x1.py, x2.py, x3.py, x4.py, x5.py]  # Chạy tất cả 5 file trên server này
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -82,15 +106,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run script
-        run: python ${{ matrix.script }}
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
         continue-on-error: true
 
   run_on_server_5:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        script: [x1.py, x2.py, x3.py, x4.py, x5.py]  # Chạy tất cả 5 file trên server này
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -102,6 +135,18 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run script
-        run: python ${{ matrix.script }}
+      - name: Run x1.py script
+        run: python x1.py
+        continue-on-error: true
+      - name: Run x2.py script
+        run: python x2.py
+        continue-on-error: true
+      - name: Run x3.py script
+        run: python x3.py
+        continue-on-error: true
+      - name: Run x4.py script
+        run: python x4.py
+        continue-on-error: true
+      - name: Run x5.py script
+        run: python x5.py
         continue-on-error: true
